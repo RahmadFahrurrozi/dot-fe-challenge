@@ -1,4 +1,4 @@
-```markdown
+
 # 🎯 Quiz App
 
 A modern, interactive quiz application built with React, TypeScript, and Tailwind CSS. Test your knowledge with various trivia questions and track your progress in real-time.
@@ -81,7 +81,7 @@ A modern, interactive quiz application built with React, TypeScript, and Tailwin
    ```bash
    git clone [your-repo-link]
    cd quiz-app
-   ```
+
 
 2. **Install dependencies**
    ```bash
