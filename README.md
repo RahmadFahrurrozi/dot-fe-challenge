@@ -3,7 +3,7 @@
 
 ## ✨ Live Demo
 
-[🔗 ]
+[🔗 https://dot-fe-challenge.vercel.app/]
 
 ## 🚀 Features
 
