@@ -1,5 +1,3 @@
-Oke, saya akan buatkan README.md yang lengkap untuk project quiz app ini. Berikut draft-nya:
-
 ```markdown
 # 🎯 Quiz App
 
