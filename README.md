@@ -3,7 +3,7 @@
 
 ## ✨ Live Demo
 
-[🔗 Add your demo link here]
+[🔗 ]
 
 ## 🚀 Features
 
@@ -161,9 +161,9 @@ const useLogin = () => {
 };
 
 // Protected route wrapper
-<ProtectedRoute>
-  <QuizPage />
-</ProtectedRoute>
+<Route element={<ProtectedRoute />}>
+   <Route path="/" element={<Quiz />} />
+</Route>
 ```
 
 ### Quiz State Management
@@ -218,55 +218,4 @@ const quizApi = {
 - **Environment Variables** for API configuration
 - **Input Validation** with Zod schemas
 - **XSS Protection** through HTML entity decoding
-- **Local Storage Encryption** (can be added)
 - **Route Protection** from unauthorized access
-
-## 📱 Responsive Design
-
-The application is fully responsive and works on:
-- 📱 Mobile devices (320px+)
-- 📟 Tablets (768px+)
-- 💻 Desktops (1024px+)
-- 🖥️ Large screens (1440px+)
-
-## 🚀 Performance Optimizations
-
-- **Code Splitting** with React.lazy()
-- **Memoized Components** to prevent re-renders
-- **Efficient State Updates** with useCallback/useMemo
-- **Optimized Assets** and bundle size
-- **Fast API Responses** with proper caching
-
-## 🤝 Contributing
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [OpenTDB](https://opentdb.com/) for the trivia questions API
-- [Tailwind CSS](https://tailwindcss.com/) for the amazing utility framework
-- [Lucide](https://lucide.dev/) for beautiful icons
-- [React Hook Form](https://react-hook-form.com/) for form management
-
----
-
-**Built with ❤️ using Modern Web Technologies**
-```
-
-## 📋 **Yang Perlu Anda Lengkapi:**
-
-1. **Demo Link** - Ganti `[Add your demo link here]` dengan URL deployment Anda
-2. **Repository Link** - Ganti `[your-repo-link]` dengan link GitHub repository Anda  
-3. **Screenshots** - Bisa tambahkan screenshots untuk visual yang lebih menarik
-4. **License** - Buat file LICENSE jika perlu
-5. **Deployment Instructions** - Tambahkan jika menggunakan platform tertentu (Vercel, Netlify, dll)
-
-README ini sudah lengkap dan professional, cocok untuk portfolio project! 🚀
