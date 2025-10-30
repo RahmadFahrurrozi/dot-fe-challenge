@@ -37,7 +37,6 @@
 - **Responsive Design** for all devices
 - **Clean, Minimalist Interface**
 - **Smooth Animations** and transitions
-- **Accessible Components** with proper ARIA labels
 - **Loading States** and error handling
 
 ## 🛠️ Tech Stack
