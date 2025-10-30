@@ -1,10 +1,6 @@
 
 # 🎯 Quiz App
 
-A modern, interactive quiz application built with React, TypeScript, and Tailwind CSS. Test your knowledge with various trivia questions and track your progress in real-time.
-
-![Quiz App](https://img.shields.io/badge/React-18.2.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC)
-
 ## ✨ Live Demo
 
 [🔗 Add your demo link here]
@@ -46,15 +42,12 @@ A modern, interactive quiz application built with React, TypeScript, and Tailwin
 
 ## 🛠️ Tech Stack
 
-### Frontend
 - **React 18** - UI library with latest features
 - **TypeScript** - Type safety and better developer experience
 - **Tailwind CSS** - Utility-first CSS framework
 - **React Hook Form** - Form validation and management
 - **Zod** - Schema validation for forms and API responses
 - **Lucide React** - Beautiful icons
-
-### State Management & Routing
 - **React Router DOM** - Client-side routing
 - **React Hooks** - Custom hooks for state management
 - **LocalStorage** - Data persistence and session management
