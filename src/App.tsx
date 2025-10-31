@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Quiz from "./pages/Quiz";
 import { ProtectedRoute } from "./routes/protectedRoutes";
 import { Toaster } from "./components/ui/sonner";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Quiz />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
       <Toaster position="top-right" richColors />
