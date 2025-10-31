@@ -1,73 +1,220 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎯 Quiz App
 
-Currently, two official plugins are available:
+## ✨ Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[🔗 https://dot-fe-challenge.vercel.app/]
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔐 Authentication System
+- **Secure Login** with username/password
+- **Protected Routes** - automatic redirect if not authenticated
+- **Session Persistence** using localStorage
+- **Demo Credentials**: `teacher` / `teacher123`
 
-## Expanding the ESLint configuration
+### 📚 Quiz Management
+- **Dynamic Questions** fetched from OpenTDB API
+- **Multiple Categories** and difficulty levels
+- **10 Questions** per quiz session
+- **Real-time Progress** tracking
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### ⏱️ Interactive Quiz Experience
+- **Countdown Timer** (10 minutes per quiz)
+- **One Question Per Page** for focused experience
+- **Instant Feedback** when selecting answers
+- **Auto-save Progress** - resume if browser closes
+- **Smart Answer Shuffling** to prevent patterns
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📊 Results & Analytics
+- **Detailed Score Breakdown** with percentage
+- **Performance Metrics** (correct/wrong answers, accuracy)
+- **Time Analysis** with completion statistics
+- **Visual Progress Indicators**
+- **Performance Levels** (Novice to Master)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🎨 Modern UI/UX
+- **Responsive Design** for all devices
+- **Clean, Minimalist Interface**
+- **Smooth Animations** and transitions
+- **Loading States** and error handling
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
+
+- **React 18** - UI library with latest features
+- **TypeScript** - Type safety and better developer experience
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Hook Form** - Form validation and management
+- **Zod** - Schema validation for forms and API responses
+- **Lucide React** - Beautiful icons
+- **React Router DOM** - Client-side routing
+- **React Hooks** - Custom hooks for state management
+- **LocalStorage** - Data persistence and session management
+
+### API & Data
+- **OpenTDB API** - Trivia question database
+- **Fetch API** - Modern HTTP requests (no Axios)
+- **Environment Variables** - Secure configuration
+
+### Development Tools
+- **Vite** - Fast build tool and dev server
+- **ESLint** - Code linting and quality
+- **PostCSS** - CSS processing
+
+## 📦 Installation
+
+### Prerequisites
+- Node.js 16+ 
+- npm or yarn
+
+### Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone [your-repo-link]
+   cd quiz-app
+
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Configuration**
+   Create a `.env.local` file:
+   ```env
+   VITE_API_BASE_URL=https://opentdb.com/api.php
+   VITE_QUIZ_AMOUNT=10
+   VITE_QUIZ_CATEGORY=21
+   VITE_QUIZ_DIFFICULTY=easy
+   VITE_QUIZ_TYPE=multiple
+   ```
+
+4. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/
+│   ├── ui/                 # Reusable UI components
+│   ├── quiz/               # Quiz-specific components
+│   │   ├── QuizStart.tsx   # Quiz landing page
+│   │   ├── QuizQuestion.tsx # Individual question view
+│   │   └── QuizResult.tsx  # Results display
+│   ├── LoginPage.tsx       # Authentication page
+│   └── QuizPage.tsx        # Main quiz container
+├── hooks/
+│   ├── useLogin.ts         # Authentication logic
+│   ├── useTogglePassword.ts # Password visibility toggle
+│   └── useQuiz.ts          # Quiz state management
+├── lib/
+│   ├── auth.ts             # Authentication utilities
+│   ├── quiz-api.ts         # API service for questions
+│   ├── quizStorage.ts      # localStorage management
+│   └── utils.ts            # Helper functions
+├── types/
+│   └── quiz.ts             # TypeScript type definitions
+└── App.tsx                 # Main application component
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎮 How to Use
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Login**
+   - Visit the login page
+   - Use demo credentials: `teacher` / `teacher123`
+   - Secure authentication with form validation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Start Quiz**
+   - Click "Start New Quiz" on the dashboard
+   - Choose to resume previous quiz if available
+   - Timer starts automatically (10 minutes)
+
+3. **Answer Questions**
+   - One question displayed per page
+   - Click any answer to proceed immediately
+   - Progress bar shows completion status
+   - Timer counts down in real-time
+
+4. **View Results**
+   - See detailed performance breakdown
+   - Analyze correct/incorrect answers
+   - Get accuracy percentage and time spent
+   - Option to restart quiz
+
+## 🔧 Key Features Implementation
+
+### Authentication Flow
+```typescript
+// Custom hook for login logic
+const useLogin = () => {
+  // Handles form validation, API calls, and redirects
+};
+
+// Protected route wrapper
+<Route element={<ProtectedRoute />}>
+   <Route path="/" element={<Quiz />} />
+</Route>
 ```
+
+### Quiz State Management
+```typescript
+const useQuiz = () => {
+  // Manages questions, answers, timer, and progress
+  // Auto-saves to localStorage
+  // Handles resume functionality
+};
+```
+
+### API Integration
+```typescript
+const quizApi = {
+  getQuestions: async () => {
+    // Fetches from OpenTDB API
+    // Processes and shuffles answers
+    // Handles errors gracefully
+  }
+};
+```
+
+## 🎯 API Reference
+
+### OpenTDB API
+- **Base URL**: `https://opentdb.com/api.php`
+- **Parameters**: 
+  - `amount`: Number of questions (default: 10)
+  - `category`: Question category (21: Sports)
+  - `difficulty`: easy/medium/hard
+  - `type`: multiple/boolean
+
+### Example Response
+```json
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which team won the 2015-16 English Premier League?",
+      "correct_answer": "Leicester City",
+      "incorrect_answers": ["Liverpool", "Chelsea", "Manchester United"]
+    }
+  ]
+}
+```
+
+## 🔒 Security Features
+
+- **Environment Variables** for API configuration
+- **Input Validation** with Zod schemas
+- **XSS Protection** through HTML entity decoding
+- **Route Protection** from unauthorized access
