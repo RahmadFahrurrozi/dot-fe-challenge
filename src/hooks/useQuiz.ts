@@ -59,7 +59,6 @@ export const useQuiz = () => {
     startTime,
   ]);
 
-  // Timer effect
   useEffect(() => {
     if (!quizStarted || quizCompleted || timeLeft <= 0) return;
 
@@ -76,7 +75,6 @@ export const useQuiz = () => {
     return () => clearInterval(timer);
   }, [quizStarted, quizCompleted, timeLeft]);
 
-  // Di bagian startQuiz function, update pemanggilan API:
   const startQuiz = useCallback(async (questionCount: number = 10) => {
     try {
       setIsLoading(true);
