@@ -14,6 +14,7 @@ const App = () => {
           <Route path="/" element={<Quiz />} />
           <Route path="*" element={<NotFound />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster position="top-right" richColors />
     </BrowserRouter>
